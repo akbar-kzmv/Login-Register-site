@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<h1>Register</h1>
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+
+{% if success %}
+    <p style="color: green;">{{ success }}</p>
+{% endif %}
+
+<form action="/register" method="post">
+    <p>
+        <input type="text" name="username" placeholder="Enter your username" required>
+    </p>
+
+    <p>
+        <input type="password" name="password" placeholder="Enter your password" required>
+    </p>
+
+    <button type="submit">Register</button>
+</form>
+<hr>
+
+<p>Already have an account?</p>
+<p><a href="/login">Login</a></p>
+</body>
+</html>
