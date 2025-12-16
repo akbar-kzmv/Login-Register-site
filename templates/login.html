@@ -3,27 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="/static/css/log.css">
 </head>
 <body>
-<h1>Login</h1>
+<div class="head"></div>
+<h1 class="headtitle">Login</h1>
 {% if error %}
-    <p style="color: red;">{{ error }}</p>
+    <p class="error" style="color: red;">{{ error }}</p>
 {% endif %}
 
 <form action="/login" method="post">
     <p>
-        <input type="text" name="username" placeholder="Enter your username" required>
+        <input class="inp" type="text" name="username" placeholder="Enter your username" required>
     </p>
 
     <p>
-        <input type="password" name="password" placeholder="Enter your password" required>
+        <input class="inp" style="position: relative; top: 44px;" type="password" name="password" placeholder="Enter your password" required>
     </p>
 
-    <button type="submit">Login</button>
+    <button class="button" type="submit">Login</button>
 </form>
-<hr>
 
 <p>No account?</p>
 <a href="/register">Register</a>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Saira:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .head {
+        width: 100%;
+        height: 100px;
+        background-color: #d0856f;
+
+    }
+
+    .headtitle {
+        font-family: "Google Sans", cursive;
+        text-align: center;
+        font-size: 60px;
+        margin-left: -30px;
+        margin-bottom: 10px;
+    }
+
+    .inp {
+        font-size: 25px;
+        position: absolute;
+        left: 900px;
+    }
+
+    .button {
+        font-family: "Google Sans", cursive;
+        position: absolute;
+        left: 900px;
+        top: 340px;
+        font-size: 30px;
+    }
+
+    .error {
+        font-family: "Google Sans", cursive;
+        font-size: 20px;
+        margin-left: 835px;
+        margin-bottom: 20px;
+    }
+</style>
 </body>
 </html>
